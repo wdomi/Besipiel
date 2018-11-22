@@ -1,0 +1,39 @@
+<div class="bodywidth">
+<a href="#home" title="Home" accesskey="0"><!----></a>
+<a href="#primarnav" title="Navigation" accesskey="1"><!----></a><a href="#menu" title="Subnavigation" accesskey="2"><!----></a>
+<a href="#content" title="Direkt zum Inhalt" accesskey="5"><!----></a><a name="top"><!----></a>
+<div id="topline">
+
+<div id="search">
+<form accept-charset="UTF-8" method="get" action="http://www.id.uzh.ch/search/search.jsp" id="formsearch">
+<div class="serviceform"><input title="Suchfeld" name="query" type="text" />
+</div>
+<div class="serviceform"><a href="javascript:document.forms['formsearch'].submit();">
+<img alt="submit" src="/ssi_idcl/imguzh/btn_search.png" /></a>
+</div></form><!---->
+</div>
+
+
+
+<div id="breadcrumbnav">
+	  <!--#include virtual="brotkrumen.html"-->
+</div>
+
+</div><div class="floatclear"><!----></div>
+
+<div id="headerarea">
+<div id="servicenav"><a href="http://www.id.uzh.ch/index.html" name="home" class="namedanchor">Home</a> | <a href="http://www.id.uzh.ch/contact.html">Kontakt</a> | <a href="http://www.id.uzh.ch/sitemap.html">Sitemap</a>
+
+</div><div id="uzhlogo">
+<a href="http://www.uzh.ch"><img height="80" width="231" alt="uzh logo" src="/ssi_idcl/imguzh/uzh_logo_d_pos_web_main.jpg" /></a></div>
+<h1><a href="http://www.id.uzh.ch/index.html">Institut xy</a></h1></div><div class="floatclear"><!----></div>
+<div class="endheaderline"><!----></div>
+
+<div id="primarnav"><a class="namedanchor" name="primarnav"><!----></a>
+<a href="http://www.id.uzh.ch/neu.html" >Neu an der Uni?</a><div class="linkseparator">&#8226;</div>
+<a href="http://www.id.uzh.ch/dl.html">Dienstleistungen</a><div class="linkseparator">&#8226;</div>
+<a href="http://www.id.uzh.ch/publikationen.html">Publikationen</a><div class="linkseparator">&#8226;</div>
+<a href="http://www.id.uzh.ch/org.html">Organisation</a><div class="linkseparator">&#8226;</div>
+<a href="http://www.id.uzh.ch/projekte.html">Projekte</a><div class="linkseparator">&#8226;</div>
+<a href="http://www.id.uzh.ch/hilfe.html">Hilfe</a>
+        </div><div class="floatclear"><!----></div><div id="rssbox"><!----></div><div class="floatclear"><!----></div>

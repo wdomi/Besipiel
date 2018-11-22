@@ -1,0 +1,11 @@
+<?php
+ include('conf/config.php');
+ $id            = $_GET['id'];
+ $firstname     = $_GET['firstname'];
+ $lastname      = $_GET['lastname'];
+ $nick          = $_GET['nick'];
+ $email         = $_GET['email'];
+ $salary        = $_GET['salary'];
+ echo "$id $firstname $lastname $nick $email $salary"; 
+?>
+
