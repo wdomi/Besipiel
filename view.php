@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 
+<!-- cd /Users/domiadmin/.bitnami/stackman/machines/xampp/volumes/root/htdocs/beispiele -->
+<!-- git pull https://github.com/wdomi/Besipiel.git -->
+<!-- git push --set-upstream https://github.com/wdomi/Besipiel.git master -->
+
 <html lang="en">
 
     <head>
@@ -46,25 +50,25 @@
                 </tr>
 
                 <?php
-          include('conf/config.php');
-          $searchstring = $_GET['searchstring'];
-          $query = "select * from personnel
+                include('conf/config.php');
+                $searchstring = $_GET['searchstring'];
+                $query = "select * from personnel
                     where lastname  like '%$searchstring%'
                         or firstname like '%$searchstring%'
                         or nick      like '%$searchstring%'
                         or email     like '%$searchstring%'
                         or salary    like '%$searchstring%'";
 
-          $result = mysqli_query($conn, $query);
-          while ($row = mysqli_fetch_array($result)) {
-            $id = $row['id'];
-            $lastname = $row['lastname'];
-            $firstname = $row['firstname'];
-            $nick = $row['nick'];
-            $email = $row['email'];
-            $salary = $row['salary'];
-            echo
-              "<tr>
+                $result = mysqli_query($conn, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                  $id = $row['id'];
+                  $lastname = $row['lastname'];
+                  $firstname = $row['firstname'];
+                  $nick = $row['nick'];
+                  $email = $row['email'];
+                  $salary = $row['salary'];
+                  echo
+                    "<tr>
                     <td>$lastname</td>
                     <td>$firstname</td>
                     <td>$nick</td>
@@ -73,17 +77,17 @@
                     <td>
                       <a href='delete.php?id=$id'>delete</a>
                       <a href='edit.php?" .
-              "id=$id" .
-              "&lastname=$lastname" .
-              "&firstname=$firstname" .
-              "&nick=$nick" .
-              "&email=$email" .
-              "&salary=$salary'>" .
-              "edit</a>
+                    "id=$id" .
+                    "&lastname=$lastname" .
+                    "&firstname=$firstname" .
+                    "&nick=$nick" .
+                    "&email=$email" .
+                    "&salary=$salary'>" .
+                    "edit</a>
                     </td>
                   </tr>";
-          }
-          ?>
+                }
+                ?>
             </table>
         </p>
     </body>
