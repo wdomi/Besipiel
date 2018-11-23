@@ -8,13 +8,13 @@ ini_set("display_errors", 1); // this is just so you can see the error while dev
 //* 1) Execute CONNECTION to database server (create connection object)
 include('conf/config.php');
             
-//* 3) PREPARE QUERY (create query object)
-$query = $conn->prepare('select * from personnel'); // query in SQL language
+//* 2) PREPARE QUERY (create query object)
+$query = $conn->prepare('select * from personnel where firstname = :firstname'); // query in SQL language
 
 //* 3a) EXECUTE QUERY (also object)
-$query->execute();
+$query->execute(['firstname' => 'Daniele']);
 
-// gives the kind of error in case SQL or connection are not correct
+// ALLERT error SQL, gives the kind of error in case SQL syntax not correct
 if ($query->errorCode() > 0) {
     $fehler = $query->errorInfo();
     echo "$fehler[2]";

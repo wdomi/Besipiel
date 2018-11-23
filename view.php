@@ -38,7 +38,9 @@
         </form>
 
         <hr> <!-- --------------- this is a line ----------------------- -->
+
         <p>
+            <h1>Personen anzeigen</h1>
             <table border=1>
                 <tr>
                     <th>Lastname</th>
@@ -46,47 +48,31 @@
                     <th>Nickname</th>
                     <th>E-Mail</th>
                     <th>Salary</th>
-                    <th>Options</th>
                 </tr>
-
                 <?php
-                include('conf/config.php');
-                $searchstring = $_GET['searchstring'];
-                $query = "select * from personnel
-                    where lastname  like '%$searchstring%'
-                        or firstname like '%$searchstring%'
-                        or nick      like '%$searchstring%'
-                        or email     like '%$searchstring%'
-                        or salary    like '%$searchstring%'";
+                //* 1) Execute CONNECTION to database server (create connection object)
+                include("conf/config.php");
+                //* 2) PREPARE QUERY (create query object)
+                $query = $conn->prepare('select * from personnel');
+                //* 3a) EXECUTE QUERY (also object)
+                $query->execute();
 
-                $result = mysqli_query($conn, $query);
-                while ($row = mysqli_fetch_array($result)) {
-                  $id = $row['id'];
+                //* 3b) GET & SHOW RESULT
+                while ($row = $query->fetch()) {    // This is an associative array, keys=fieldnames
                   $lastname = $row['lastname'];
                   $firstname = $row['firstname'];
                   $nick = $row['nick'];
                   $email = $row['email'];
                   $salary = $row['salary'];
-                  echo
-                    "<tr>
-                    <td>$lastname</td>
-                    <td>$firstname</td>
-                    <td>$nick</td>
-                    <td>$email</td>
-                    <td>$salary</td>
-                    <td>
-                      <a href='delete.php?id=$id'>delete</a>
-                      <a href='edit.php?" .
-                    "id=$id" .
-                    "&lastname=$lastname" .
-                    "&firstname=$firstname" .
-                    "&nick=$nick" .
-                    "&email=$email" .
-                    "&salary=$salary'>" .
-                    "edit</a>
-                    </td>
-                  </tr>";
+                  echo "<tr>
+                              <td>$lastname</td>
+                              <td>$firstname</td>
+                              <td>$nick</td>
+                              <td>$email</td>
+                              <td>$salary</td>
+                            </tr>";
                 }
+
                 ?>
             </table>
         </p>
