@@ -18,13 +18,13 @@ catch(PDOException $e) {
  */
 
 try {
-  $conn = new PDO(
-    "mysql:host=localhost;
-                    dbname=mykurs",
-    "root",
-    ""
-  );
-} catch (PDOException $e) {
+  $conn = new PDO("mysql:host=localhost;
+                  dbname=mykurs",
+                  "root",
+                  "");
+} 
+
+catch (PDOException $e) {
   echo "Connection error: "
     . $e->getMessage();
   exit;
