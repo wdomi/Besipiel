@@ -85,7 +85,7 @@ while($row=$query->fetch()){
 		 <td>$nick</td>
 		 <td>$email</td>
 		 <td>$salary</td>
-		 <td><a href='zadelete.php?id=$id'> delete </td>
+		 <td><a href='zadelete.php?id=$id'> delete</a> </td>
 		</tr>";
 }	
 echo "</table>";	
